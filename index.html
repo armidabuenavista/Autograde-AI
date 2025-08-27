@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoGrade AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 AutoGrade AI</h1>
+            <p>Upload vehicle images for automated damage detection</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-box" id="uploadBox">
+                <input type="file" id="fileInput" accept="image/*" hidden>
+                <div class="upload-content">
+                    <img src="https://cdn-icons-png.flaticon.com/512/7258/7258501.png" alt="Upload" class="upload-icon">
+                    <p>Drag & drop vehicle images or <span class="browse-link">browse files</span></p>
+                    <small>Supports JPG, PNG, JPEG</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <h2>Analysis Results</h2>
+            <div class="results-container">
+                <div class="image-comparison">
+                    <div class="image-box">
+                        <h3>Original Image</h3>
+                        <img id="originalImage" class="result-image">
+                    </div>
+                    <div class="image-box">
+                        <h3>Damage Analysis</h3>
+                        <img id="annotatedImage" class="result-image">
+                    </div>
+                </div>
+
+                <div class="damage-details">
+                    <h3>Damage Detected</h3>
+                    <div id="damageList" class="damage-list">
+                        <!-- Results will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Analyzing vehicle damage...</p>
+        </div>
+
+        <div class="error" id="error" style="display: none;">
+            <p>❌ Error processing image. Please try again.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
